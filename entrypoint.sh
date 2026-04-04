@@ -56,6 +56,8 @@ apt-get install -y --force-yes build-essential git make bc bison \
 
 set_output hash "$(cd "$kernel_path" && git rev-parse HEAD || exit 127)"
 
+git submodule update --init
+
 msg "Verifying host GCC version..."
 gcc --version
 
