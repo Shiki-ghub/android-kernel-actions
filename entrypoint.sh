@@ -40,6 +40,7 @@ apt install -y --no-install-recommends git make bc bison openssl \
     device-tree-compiler ca-certificates python3 python2 xz-utils
 ln -sf "/usr/bin/python${python_version}" /usr/bin/python
 set_output hash "$(cd "$kernel_path" && git rev-parse HEAD || exit 127)"
+git submodule update --init
 msg "Installing toolchain..."
 if [[ $arch = "arm64" ]]; then
     arch_opts="ARCH=${arch} SUBARCH=${arch}"
