@@ -28,8 +28,8 @@ jobs:
         defconfig: vince_defconfig
         image: Image.gz-dtb
 
-    - name: Create Release
-      uses: ncipollo/release-action@v1.21.0
+    - name: Android Kernel Action
+      uses: lemniskett/android-kernel-actions@v1.0.1
       with:
         artifacts: ${{ steps.build.outputs.outfile }}
         token: ${{ secrets.GITHUB_TOKEN }}
