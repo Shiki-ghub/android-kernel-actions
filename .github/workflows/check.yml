@@ -16,3 +16,6 @@ jobs:
         uses: ludeeus/action-shellcheck@master
         env:
           SHELLCHECK_OPTS: "-e SC2086"
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.21.0
